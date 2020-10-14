@@ -184,10 +184,26 @@ namespace Screen_Capture
             }
         }
 
+        static void OpenBMP()
+        {
+            try
+            {
+                myBitmap = new Bitmap(@"D:\Moulton.jpg");
+
+                myBitmap.Save(@"D:\test.jpg", ImageFormat.Jpeg);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
+        }
+
         static void Main(string[] args)
         {
-            CaptureMyScreen();
+            //CaptureMyScreen();
             //ConvertToGreyScale();
+            OpenBMP();
             GetAverageRGB();
             OutputAverageRGBImage();
 
